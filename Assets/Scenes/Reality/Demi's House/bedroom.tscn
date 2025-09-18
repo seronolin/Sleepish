@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ds0ua6ethfcjh"]
+
+[ext_resource type="PackedScene" uid="uid://q17yk0v4guxf" path="res://Assets/Scenes/Reality/reality_player.tscn" id="1_8wwfw"]
+
+[node name="Bedroom" type="Node2D"]
+
+[node name="RealityPlayer" parent="." instance=ExtResource("1_8wwfw")]
