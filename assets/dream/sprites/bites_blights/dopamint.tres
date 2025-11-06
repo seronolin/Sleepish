@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://brjdlwhag85d2"]
+
+[ext_resource type="Texture2D" uid="uid://2cihw1x1oywa" path="res://assets/dream/sprites/bites_blights/bitesandblights.png" id="1_uj1aw"]
+
+[resource]
+atlas = ExtResource("1_uj1aw")
+region = Rect2(180, 144, 18, 18)

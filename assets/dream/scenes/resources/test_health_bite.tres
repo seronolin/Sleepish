@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="BiteBlightData" load_steps=3 format=3 uid="uid://b06tsdwb5tk7e"]
+
+[ext_resource type="Script" uid="uid://btuepkm5b3p6l" path="res://assets/dream/systems/bites_blights/bite_blight_data.gd" id="1_rlbei"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/demo sprites.png" id="1_vr0fr"]
+
+[resource]
+script = ExtResource("1_rlbei")
+powerup_name = "Test Health Bite"
+description = "restores 1 heart"
+flavor_text = "tastes like debugging"
+icon = ExtResource("1_vr0fr")
+hp_change = 3
+metadata/_custom_type_script = "uid://btuepkm5b3p6l"

@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://ci3cwl23r23fm"]
+
+[ext_resource type="Script" uid="uid://b7fdv35lp1xrl" path="res://assets/core/scripts/main_menu.gd" id="1_76bbk"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_76bbk")
+
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 376.0
+offset_top = 201.0
+offset_right = 540.0
+offset_bottom = 293.0

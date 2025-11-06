@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="BiteBlightData" load_steps=3 format=3 uid="uid://cqpx5a351tajf"]
+
+[ext_resource type="Texture2D" uid="uid://cte13yvj2wd22" path="res://assets/dream/sprites/bites_blights/worry_waffles.tres" id="1_vaxmm"]
+[ext_resource type="Script" uid="uid://btuepkm5b3p6l" path="res://assets/dream/systems/bites_blights/bite_blight_data.gd" id="2_v4l5b"]
+
+[resource]
+script = ExtResource("2_v4l5b")
+powerup_name = "Cheermelette"
+description = "+9 Energy"
+flavor_text = "Egg-cellent comfort food! It flips your mood sunny side up!"
+icon = ExtResource("1_vaxmm")
+source = "Homemade"
+energy_effect = -60
+shields_granted = 3
+metadata/_custom_type_script = "uid://btuepkm5b3p6l"

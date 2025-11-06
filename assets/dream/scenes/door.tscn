@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://wvu2pb3odj8p"]
+
+[ext_resource type="Script" uid="uid://clifpibq3ah7j" path="res://assets/dream/scripts/door.gd" id="1_hpvv5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uvdjg"]
+
+[node name="Door" type="Area2D"]
+script = ExtResource("1_hpvv5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_uvdjg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

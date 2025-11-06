@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://bj74ppa38t1h8"]
+
+[ext_resource type="PackedScene" uid="uid://q17yk0v4guxf" path="res://assets/reality/scenes/player/reality_player.tscn" id="1_18d6i"]
+[ext_resource type="Script" uid="uid://cqpcf7pvucu3e" path="res://assets/reality/scripts/reality_main.gd" id="1_u5wfo"]
+[ext_resource type="PackedScene" uid="uid://cahnjn1pmlrbr" path="res://assets/dream/ui/reality_hud.tscn" id="2_skihf"]
+
+[node name="RealityMain" type="Node2D"]
+script = ExtResource("1_u5wfo")
+
+[node name="RealityPlayer" parent="." instance=ExtResource("1_18d6i")]
+
+[node name="reality_hud" parent="." instance=ExtResource("2_skihf")]

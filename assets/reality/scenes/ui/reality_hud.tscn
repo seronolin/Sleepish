@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://ogf28r131ede"]
+
+[ext_resource type="PackedScene" uid="uid://b2kfrpfaecbew" path="res://assets/dream/ui/clock.tscn" id="1_fy63i"]
+[ext_resource type="Script" uid="uid://c25iu2m1lkycc" path="res://assets/dream/scripts/button.gd" id="2_dqgo0"]
+
+[node name="reality_hud" type="CanvasLayer"]
+
+[node name="Clock" parent="." instance=ExtResource("1_fy63i")]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 86.0
+offset_top = 16.0
+offset_right = 126.0
+offset_bottom = 39.0
+
+[node name="Button" type="Button" parent="."]
+offset_right = 45.0
+offset_bottom = 41.0
+script = ExtResource("2_dqgo0")

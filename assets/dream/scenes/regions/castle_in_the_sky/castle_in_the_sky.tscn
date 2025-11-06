@@ -1,0 +1,95 @@
+[gd_scene load_steps=15 format=4 uid="uid://culqq1pmpgpbs"]
+
+[ext_resource type="PackedScene" uid="uid://bo5w7vblhuqj1" path="res://assets/dream/scenes/regions/dream_region_base.tscn" id="1_fiwgg"]
+[ext_resource type="Texture2D" uid="uid://cmjr88oflxlsd" path="res://assets/dream/sprites/backgrounds/1.png" id="2_4ent3"]
+[ext_resource type="Texture2D" uid="uid://bgv8bh73niupm" path="res://assets/dream/sprites/backgrounds/2.png" id="3_adl8i"]
+[ext_resource type="Texture2D" uid="uid://6r53pnhtxqsw" path="res://assets/dream/sprites/backgrounds/3.png" id="4_xafys"]
+[ext_resource type="Texture2D" uid="uid://bn8i3nufogkg4" path="res://assets/dream/sprites/backgrounds/4.png" id="5_cwp5g"]
+[ext_resource type="Texture2D" uid="uid://dkmuoei55b2d4" path="res://assets/dream/sprites/backgrounds/5.png" id="6_xmv1p"]
+[ext_resource type="PackedScene" uid="uid://c51xijtwfiwg5" path="res://assets/dream/scenes/pickups/bites&blights.tscn" id="7_iu4t8"]
+[ext_resource type="Resource" uid="uid://b2tph0mmfn37k" path="res://assets/dream/data/bites_blights/dopamint.tres" id="8_hjpq6"]
+[ext_resource type="Resource" uid="uid://c2b206r4n0g3i" path="res://assets/dream/data/bites_blights/depresso_shot.tres" id="9_sv04q"]
+[ext_resource type="Resource" uid="uid://p56fxs0jxtlr" path="res://assets/dream/data/bites_blights/halo_bar.tres" id="10_gqj3o"]
+[ext_resource type="Resource" uid="uid://ev82jvwfy0tq" path="res://assets/dream/data/bites_blights/serotofee.tres" id="11_hjpq6"]
+[ext_resource type="Resource" uid="uid://dqxeymicyr8uu" path="res://assets/dream/data/bites_blights/sugar_crash.tres" id="12_gqj3o"]
+[ext_resource type="Resource" uid="uid://57r7a6o2akqc" path="res://assets/dream/data/bites_blights/day-old_fries.tres" id="13_glifm"]
+[ext_resource type="Resource" uid="uid://cqpx5a351tajf" path="res://assets/dream/data/bites_blights/worry_waffles.tres" id="14_glifm"]
+
+[node name="CastleInTheSky" instance=ExtResource("1_fiwgg")]
+
+[node name="PlayerSpawnPoint" parent="." index="0"]
+position = Vector2(82, 65)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." index="1"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" index="0"]
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(576, 324)
+
+[node name="1" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" index="0"]
+position = Vector2(288, 160)
+texture = ExtResource("2_4ent3")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground" index="1"]
+motion_scale = Vector2(0.2, 1)
+motion_mirroring = Vector2(576, 0)
+
+[node name="2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2" index="0"]
+position = Vector2(288, 160)
+texture = ExtResource("3_adl8i")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground" index="2"]
+motion_scale = Vector2(0.3, 1)
+motion_mirroring = Vector2(576, 324)
+
+[node name="3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3" index="0"]
+position = Vector2(288, 160)
+texture = ExtResource("4_xafys")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground" index="3"]
+motion_scale = Vector2(0.4, 1)
+motion_mirroring = Vector2(576, 0)
+
+[node name="4" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4" index="0"]
+position = Vector2(288, 160)
+texture = ExtResource("5_cwp5g")
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground" index="4"]
+motion_scale = Vector2(0.5, 1)
+motion_mirroring = Vector2(576, 0)
+
+[node name="5" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5" index="0"]
+position = Vector2(288, 160)
+texture = ExtResource("6_xmv1p")
+
+[node name="TileMapLayer" parent="." index="2"]
+position = Vector2(0, 0)
+tile_map_data = PackedByteArray("AAARAA8AAQADAAMAAAARAA4AAQAPAAcAAAAQAA8AAQACAAMAAAAQAA4AAQAOAAMAAAAPAA8AAQAOAAUAAAAPAA4AAQACAAEAAAAOAA8AAQAOAAUAAAAOAA4AAQAOAAcAAAANAA8AAQAOAAEAAAANAA4AAQAOAAcAAAAMAA8AAQAOAAUAAAAMAA4AAQAOAAcAAAALAA8AAQAOAAEAAAALAA4AAQAOAAMAAAAKAA8AAQAOAAUAAAAKAA4AAQAOAAcAAAAJAA8AAQAOAAEAAAAJAA4AAQAOAAcAAAAIAA8AAQAOAAUAAAAIAA4AAQAOAAcAAAAHAA8AAQACAAMAAAAHAA4AAQACAAEAAAAGAA8AAQACAAMAAAAGAA4AAQACAAEAAAAFAA8AAQACAAMAAAAFAA4AAQAOAAMAAAAEAA8AAQACAAMAAAAEAA4AAQAOAAcAAAADAA8AAQAOAAEAAAADAA4AAQAOAAcAAAACAA8AAQABAAMAAAACAA4AAQABAAEAAAAaAA0AAQADAAMAAAAaAAwAAQADAAEAAAAZAA0AAQAOAAUAAAAZAAwAAQAOAAMAAAAYAA0AAQAOAAEAAAAYAAwAAQAOAAcAAAAXAA0AAQAOAAEAAAAXAAwAAQAOAAcAAAAWAA0AAQAOAAUAAAAWAAwAAQAOAAMAAAAVAA0AAQACAAMAAAAVAAwAAQAOAAMAAAAUAA0AAQACAAMAAAAUAAwAAQACAAEAAAATAA0AAQAOAAUAAAATAAwAAQACAAEAAAASAA0AAQANAAUAAAASAAwAAQABAAEAAAARAA0AAQABAAEAAAASAA4AAQADAAMAAAAcAA0AAQABAAMAAAAcAAwAAQABAAEAAAAdAAwAAQACAAEAAAAeAAwAAQADAAEAAAAeAA0AAQADAAMAAAAdAA0AAQACAAMAAAAgAAsAAQABAAMAAAAgAAoAAQABAAEAAAAhAAoAAQAOAAMAAAAiAAoAAQADAAEAAAAiAAsAAQADAAMAAAAhAAsAAQAOAAUAAAAlAAoAAQABAAgAAAAlAAsAAQABAAkAAAAoAAoAAQABAAgAAAAoAAsAAQABAAkAAAArAAoAAQABAAgAAAArAAsAAQABAAkAAAAuAAsAAQAFAAEAAAAuAAwAAQAPAAIAAAAuAA0AAQANAAMAAAAuAA4AAQABAAIAAAAuAA8AAQAPAAYAAAAuABAAAQABAAMAAAAvAAsAAQAGAAEAAAAwAAsAAQAHAAEAAAAwAAwAAQAHAAIAAAAwAA0AAQAPAAMAAAAvAA0AAQAOAAcAAAAvAA4AAQACAAIAAAAvAA8AAQACAAIAAAAvABAAAQAOAAUAAAAwABAAAQADAAMAAAAwAA8AAQADAAIAAAAwAA4AAQANAAYAAAALAAoAAQAJAAQAAAALAAsAAQAJAAUAAAALAAwAAQAJAAYAAAAMAAoAAQALAAQAAAAMAAsAAQALAAUAAAANAAoAAQAJAAQAAAANAAsAAQAJAAYAAAALAAkAAQABAAYAAAAMAAkAAQAGAAEAAAANAAkAAQACAAYAAAAFAA0AAQAJAAAAAAAPAA0AAQAJAAAAAAAWAAsAAQAHAAAAAAAdAAsAAQAKAAAAAAAcAAsAAQAHAAAAAAAhAAkAAQAOAAIAAAAlAAkAAQAJAAAAAAAoAAkAAQAGAAAAAAArAAkAAQABAAUAAAAMAAcAAQABAA8AAAAUAAoAAQABAA8AAAAVAAoAAQABAA8AAAAWAAoAAQABAA8AAAAhAAgAAQABAA8AAAAvAAwAAQAKAAAAAAAJAA0AAQAGAAAAAAAGAAkAAAAAAAAAAQAZAAkAAAAAAAAAAgAvAAgAAAAAAAAAAgAuAAoAAQAEAAUAAAA1AAsAAQABAAEAAAA2AAsAAQAOAAcAAAA3AAsAAQACAAEAAAA4AAsAAQACAAEAAAA5AAoAAQABAAEAAAA6AAoAAQAOAAMAAAA7AAsAAQACAAIAAAA8AAsAAQACAAIAAAA5AAsAAQAPAAcAAAA6AAsAAQACAAIAAAA1AAwAAQAPAAYAAAA2AAwAAQACAAIAAAA3AAwAAQACAAIAAAA4AAwAAQACAAIAAAA5AAwAAQACAAIAAAA6AAwAAQACAAIAAAA7AAwAAQACAAIAAAA8AAwAAQACAAIAAAA1AA0AAQABAAMAAAA2AA0AAQAOAAUAAAA3AA0AAQAOAAUAAAA4AA0AAQAOAAEAAAA5AA0AAQAOAAEAAAA6AA0AAQAOAAUAAAA7AA0AAQACAAMAAAA8AA0AAQACAAMAAAA7AAoAAQAOAAMAAAA8AAoAAQAOAAMAAAA9AAoAAQAOAAMAAAA9AAsAAQACAAIAAAA9AAwAAQACAAIAAAA9AA0AAQAOAAUAAAA+AAoAAQAJAAEAAAA/AAoAAQAGAAMAAABAAAoAAQAKAAEAAABBAAoAAQAHAAEAAABBAAsAAQANAAMAAABBAAwAAQANAAEAAABBAA0AAQAHAAMAAABAAA0AAQAGAAEAAAA/AA0AAQAKAAMAAAA+AA0AAQAJAAMAAAA+AAsAAQAJAAIAAAA+AAwAAQADAAIAAABCAAsAAQAOAAMAAABCAAwAAQAOAAUAAABDAAsAAQAOAAMAAABDAAwAAQAOAAUAAABEAAsAAQADAAEAAABEAAwAAQADAAMAAABIAAsAAQABAAEAAABJAAsAAQACAAEAAABKAAsAAQAOAAMAAABLAAsAAQAOAAcAAABMAAsAAQAOAAMAAABIAAwAAQABAAMAAABJAAwAAQAOAAUAAABKAAwAAQAOAAUAAABLAAwAAQAOAAUAAABMAAwAAQACAAMAAABNAAwAAQAOAAUAAABNAAsAAQAOAAcAAABOAAsAAQAOAAcAAABPAAsAAQACAAEAAABOAAwAAQACAAMAAABPAAwAAQAPAAUAAABSAAsAAQAOAAcAAABSAAwAAQACAAIAAABTAAwAAQACAAIAAABUAAwAAQANAAcAAABUAAsAAQADAAEAAABTAAsAAQAOAAMAAABRAAsAAQAOAAcAAABQAAsAAQACAAEAAABQAAwAAQACAAIAAABRAAwAAQACAAIAAABVAA0AAQANAAcAAABWAA4AAQANAAcAAABXAA8AAQANAAcAAABVAAwAAQADAAEAAABWAA0AAQADAAEAAABXAA4AAQADAAEAAABYAA8AAQACAAEAAABZAA8AAQAOAAMAAABaAA8AAQAOAAcAAABWAA8AAQACAAIAAABVAA4AAQACAAIAAABUAA0AAQACAAIAAABTAA0AAQACAAIAAABUAA4AAQACAAIAAABUAA8AAQACAAIAAABVAA8AAQACAAIAAABTAA4AAQAPAAUAAABSAA0AAQACAAIAAABSAA4AAQAOAAEAAABTAA8AAQALAAIAAABRAA4AAQABAAMAAABRAA0AAQAPAAUAAABQAA0AAQACAAMAAABPAA0AAQABAAMAAABTABAAAQABAAMAAABUABAAAQAOAAUAAABVABAAAQACAAMAAABWABAAAQAOAAUAAABXABAAAQAOAAEAAABYABAAAQACAAMAAABZABAAAQAOAAEAAABaABAAAQAOAAUAAABbAA8AAQAOAAMAAABcAA8AAQACAAEAAABdAA8AAQAOAAcAAABeAA8AAQADAAEAAABbABAAAQACAAMAAABcABAAAQACAAMAAABdABAAAQAOAAEAAABeABAAAQAJAAMAAABfABAAAQACAAYAAAA/AAUAAAAAAAAAAQA3AAoAAQAGAAAAAAA+AAkAAQAGAAIAAABDAAoAAQABAAUAAAA=")
+
+[node name="BiteBlight" parent="TileMapLayer" index="0" instance=ExtResource("7_iu4t8")]
+position = Vector2(200, 131)
+data = ExtResource("8_hjpq6")
+
+[node name="BiteBlight2" parent="TileMapLayer" index="1" instance=ExtResource("7_iu4t8")]
+position = Vector2(473, 177)
+data = ExtResource("9_sv04q")
+
+[node name="BiteBlight3" parent="TileMapLayer" index="2" instance=ExtResource("7_iu4t8")]
+position = Vector2(602, 149)
+data = ExtResource("10_gqj3o")
+
+[node name="BiteBlight" parent="." index="3" instance=ExtResource("7_iu4t8")]
+position = Vector2(1225, 160)
+data = ExtResource("11_hjpq6")
+
+[node name="BiteBlight2" parent="." index="4" instance=ExtResource("7_iu4t8")]
+position = Vector2(763, 162)
+data = ExtResource("12_gqj3o")
+
+[node name="BiteBlight3" parent="." index="5" instance=ExtResource("7_iu4t8")]
+position = Vector2(970, 148)
+data = ExtResource("13_glifm")
+
+[node name="BiteBlight4" parent="." index="6" instance=ExtResource("7_iu4t8")]
+position = Vector2(1448, 226)
+data = ExtResource("14_glifm")

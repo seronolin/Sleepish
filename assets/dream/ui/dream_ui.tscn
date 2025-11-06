@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://bum1ovbqxhf35"]
+
+[ext_resource type="Script" uid="uid://crsun637eapls" path="res://assets/dream/scripts/ui/energy_bar.gd" id="1_8bfht"]
+[ext_resource type="Script" uid="uid://vxr7heejo7uk" path="res://assets/dream/scripts/ui/dream_ui.gd" id="1_ydwdf"]
+[ext_resource type="PackedScene" uid="uid://2uq5l0s0tmo8" path="res://assets/dream/ui/health_display.tscn" id="3_rampq"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/demo sprites.png" id="4_sqt4y"]
+
+[node name="GameScreen" type="CanvasLayer"]
+script = ExtResource("1_ydwdf")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 0.981937)
+size_flags_horizontal = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="EnergyBar" type="ProgressBar" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 16)
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 1
+step = 1.0
+value = 100.0
+show_percentage = false
+script = ExtResource("1_8bfht")
+
+[node name="HealthDisplay" parent="MarginContainer/HBoxContainer" instance=ExtResource("3_rampq")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+alignment = 0
+
+[node name="DemoSprites" type="Sprite2D" parent="."]
+position = Vector2(381, 246)
+texture = ExtResource("4_sqt4y")

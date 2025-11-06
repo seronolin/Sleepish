@@ -1,0 +1,55 @@
+[gd_scene load_steps=2 format=3 uid="uid://bt6yhm8o5xmgw"]
+
+[ext_resource type="Texture2D" uid="uid://gy0mbjn00nlg" path="res://assets/dream/sprites/ui/ui_updatable.png" id="1_xpknd"]
+
+[node name="TimersUI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 16.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ActiveEffectTimer" type="NinePatchRect" parent="VBoxContainer"]
+custom_minimum_size = Vector2(32, 16)
+layout_mode = 2
+texture = ExtResource("1_xpknd")
+region_rect = Rect2(182, 38, 32, 16)
+patch_margin_left = 5
+patch_margin_top = 4
+patch_margin_right = 5
+patch_margin_bottom = 6
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="HboxContainer" type="HBoxContainer" parent="VBoxContainer/ActiveEffectTimer"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 3.0
+offset_right = 36.0
+offset_bottom = 12.0
+theme_override_constants/separation = 6
+
+[node name="ActiveEffectTimer2" type="NinePatchRect" parent="VBoxContainer"]
+custom_minimum_size = Vector2(32, 16)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("1_xpknd")
+region_rect = Rect2(182, 38, 32, 16)
+patch_margin_left = 5
+patch_margin_top = 4
+patch_margin_right = 5
+patch_margin_bottom = 6
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="HboxContainer" type="HBoxContainer" parent="VBoxContainer/ActiveEffectTimer2"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 3.0
+offset_right = 36.0
+offset_bottom = 12.0
+theme_override_constants/separation = 6

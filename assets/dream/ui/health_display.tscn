@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://2uq5l0s0tmo8"]
+
+[ext_resource type="Script" uid="uid://dfafiap1ock1p" path="res://assets/dream/scripts/ui/health_display.gd" id="1_jum7t"]
+[ext_resource type="SpriteFrames" uid="uid://dil5ccfcqs208" path="res://assets/dream/ui/heart frames.tres" id="2_lpsn6"]
+
+[node name="HealthUI" type="Control"]
+custom_minimum_size = Vector2(116, 32)
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -116.0
+offset_bottom = 32.0
+grow_horizontal = 0
+size_flags_horizontal = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_direction = 3
+layout_mode = 0
+offset_right = 116.0
+offset_bottom = 32.0
+script = ExtResource("1_jum7t")
+
+[node name="HeartWrapper1" type="Control" parent="HBoxContainer"]
+custom_minimum_size = Vector2(36, 18)
+layout_mode = 2
+
+[node name="Heart1" type="AnimatedSprite2D" parent="HBoxContainer/HeartWrapper1"]
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("2_lpsn6")
+animation = &"extra_full"
+centered = false
+
+[node name="HeartWrapper2" type="Control" parent="HBoxContainer"]
+custom_minimum_size = Vector2(36, 18)
+layout_mode = 2
+
+[node name="Heart2" type="AnimatedSprite2D" parent="HBoxContainer/HeartWrapper2"]
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("2_lpsn6")
+animation = &"idle_empty"
+centered = false
+
+[node name="HeartWrapper3" type="Control" parent="HBoxContainer"]
+custom_minimum_size = Vector2(36, 18)
+layout_mode = 2
+
+[node name="Heart3" type="AnimatedSprite2D" parent="HBoxContainer/HeartWrapper3"]
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("2_lpsn6")
+animation = &"idle_empty"
+centered = false

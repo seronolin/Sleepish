@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="BiteBlightData" load_steps=3 format=3 uid="uid://dyp8csuvt8pyo"]
+
+[ext_resource type="Script" uid="uid://btuepkm5b3p6l" path="res://assets/dream/systems/bites_blights/bite_blight_data.gd" id="1_36xfu"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/demo sprites.png" id="1_iyug8"]
+
+[resource]
+script = ExtResource("1_36xfu")
+powerup_name = "test_extra_health"
+icon = ExtResource("1_iyug8")
+energy_effect = 30
+energy_threshold_effect = 70
+metadata/_custom_type_script = "uid://btuepkm5b3p6l"

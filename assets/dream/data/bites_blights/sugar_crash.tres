@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="BiteBlightData" load_steps=3 format=3 uid="uid://dqxeymicyr8uu"]
+
+[ext_resource type="Script" uid="uid://btuepkm5b3p6l" path="res://assets/dream/systems/bites_blights/bite_blight_data.gd" id="1_6sjfi"]
+[ext_resource type="Texture2D" uid="uid://i1ut12xpygdl" path="res://assets/dream/sprites/bites_blights/sugar_crash.tres" id="1_8dbi3"]
+
+[resource]
+script = ExtResource("1_6sjfi")
+powerup_name = "Sugar Crash"
+type = "Blight"
+description = "+18 Energy now, -21 in 90 seconds"
+flavor_text = "A moment of sugary bliss followed by an inevitable descent into despair."
+icon = ExtResource("1_8dbi3")
+acquisition = "Purchased"
+energy_effect = 18
+duration = 90.0
+cooldown = 300.0
+special_effect = "sugar_crash"
+metadata/_custom_type_script = "uid://btuepkm5b3p6l"

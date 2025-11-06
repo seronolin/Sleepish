@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="BiteBlightData" load_steps=3 format=3 uid="uid://ev82jvwfy0tq"]
+
+[ext_resource type="Texture2D" uid="uid://dljhgrn0dibmr" path="res://assets/dream/sprites/bites_blights/serotofee.tres" id="1_sq1mp"]
+[ext_resource type="Script" uid="uid://btuepkm5b3p6l" path="res://assets/dream/systems/bites_blights/bite_blight_data.gd" id="2_t0uqr"]
+
+[resource]
+script = ExtResource("2_t0uqr")
+powerup_name = "Cheermelette"
+description = "+9 Energy"
+flavor_text = "Egg-cellent comfort food! It flips your mood sunny side up!"
+icon = ExtResource("1_sq1mp")
+extra_hearts = 1
+metadata/_custom_type_script = "uid://btuepkm5b3p6l"

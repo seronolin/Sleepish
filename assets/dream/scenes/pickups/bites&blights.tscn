@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://c51xijtwfiwg5"]
+
+[ext_resource type="Script" uid="uid://den6x5xx40lao" path="res://assets/dream/systems/bites_blights/bite_blight.gd" id="1_157u0"]
+[ext_resource type="Texture2D" uid="uid://i1ut12xpygdl" path="res://assets/dream/sprites/bites_blights/sugar_crash.tres" id="2_4o36t"]
+[ext_resource type="Script" uid="uid://btuepkm5b3p6l" path="res://assets/dream/systems/bites_blights/bite_blight_data.gd" id="2_r4pbe"]
+
+[sub_resource type="Resource" id="Resource_a2xv7"]
+script = ExtResource("2_r4pbe")
+icon = ExtResource("2_4o36t")
+metadata/_custom_type_script = "uid://btuepkm5b3p6l"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r4pbe"]
+radius = 8.0
+
+[node name="BiteBlight" type="Area2D"]
+script = ExtResource("1_157u0")
+data = SubResource("Resource_a2xv7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_r4pbe")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_4o36t")

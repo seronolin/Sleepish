@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="BiteBlightData" load_steps=3 format=3 uid="uid://bhiimcet1gku1"]
+
+[ext_resource type="Texture2D" uid="uid://bbiyfflamxmyb" path="res://assets/dream/sprites/bites_blights/flap_jack_of_all_trades.tres" id="1_kpokc"]
+[ext_resource type="Script" uid="uid://btuepkm5b3p6l" path="res://assets/dream/systems/bites_blights/bite_blight_data.gd" id="2_n5mxo"]
+
+[resource]
+script = ExtResource("2_n5mxo")
+powerup_name = "Cheermelette"
+description = "+9 Energy"
+flavor_text = "Egg-cellent comfort food! It flips your mood sunny side up!"
+icon = ExtResource("1_kpokc")
+source = "Homemade"
+energy_effect = 9
+extra_hearts = 1
+metadata/_custom_type_script = "uid://btuepkm5b3p6l"
