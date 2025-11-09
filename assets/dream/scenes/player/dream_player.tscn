@@ -1,9 +1,9 @@
-[gd_scene load_steps=40 format=3 uid="uid://c0b41va08sq6i"]
+[gd_scene load_steps=42 format=3 uid="uid://c0b41va08sq6i"]
 
 [ext_resource type="Script" uid="uid://cp3hbqdnny5jl" path="res://assets/dream/scripts/player/player_controller.gd" id="1_38rej"]
 [ext_resource type="Script" uid="uid://boyemfeyalyey" path="res://assets/dream/scripts/player/health/hp_manager.gd" id="2_1xf5e"]
 [ext_resource type="Script" uid="uid://bodxa3dl6a77w" path="res://assets/dream/scripts/player/modes/demise.gd" id="2_23lac"]
-[ext_resource type="Texture2D" uid="uid://cfrpaapm2d44y" path="res://assets/dream/sprites/other/Suzie Costume.png" id="4_t1xgp"]
+[ext_resource type="Texture2D" uid="uid://fx5h7epq6gxa" path="res://assets/dream/sprites/player/demidevil-Sheet.png" id="4_kces7"]
 [ext_resource type="Script" uid="uid://b7p4o5lx2ew41" path="res://assets/dream/scripts/player/modes/demidevil.gd" id="4_w3t24"]
 [ext_resource type="Script" uid="uid://ddlag6eh3n0ls" path="res://assets/dream/scripts/player/states/state_machine.gd" id="5_23lac"]
 [ext_resource type="Script" uid="uid://bgymcwir3p11w" path="res://assets/dream/scripts/player/states/idle.gd" id="6_w3t24"]
@@ -22,7 +22,6 @@
 [ext_resource type="Script" uid="uid://cl18bi5ituu07" path="res://assets/dream/scripts/player/skills/shield.gd" id="20_dabov"]
 [ext_resource type="Script" uid="uid://d3xhc1cwyom1g" path="res://assets/dream/scripts/player/buffs/buff_manager.gd" id="21_dabov"]
 [ext_resource type="Script" uid="uid://flnrrhtybm0y" path="res://assets/dream/scripts/player/buffs/shield_buff.gd" id="22_j3bop"]
-[ext_resource type="Script" path="res://assets/dream/scripts/halo_buff.gd" id="23_ho7au"]
 [ext_resource type="Texture2D" uid="uid://causey4rnints" path="res://assets/dream/sprites/bites_blights/uiii.png" id="24_wv7ja"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_38rej"]
@@ -30,32 +29,133 @@ load_path = "res://.godot/imported/Olly Costume.png-d8c616c58805e812e9b7a03db82d
 
 [sub_resource type="Animation" id="Animation_23lac"]
 resource_name = "fall"
+length = 1.5
 loop_mode = 1
 step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Demidevil/DD Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [13, 15, 16, 13]
+}
 
 [sub_resource type="Animation" id="Animation_6cd4h"]
 resource_name = "idle"
-length = 4.0
+length = 6.0
 loop_mode = 1
 step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Demidevil/DD Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.75, 1.5, 2.25, 3, 3.75, 4.5, 5.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
 
 [sub_resource type="Animation" id="Animation_t1xgp"]
 resource_name = "jump"
+length = 2.0
 loop_mode = 1
 step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Demidevil/DD Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [8, 9, 10, 11, 8]
+}
 
 [sub_resource type="Animation" id="Animation_38rej"]
 resource_name = "move"
 length = 3.0
 loop_mode = 1
 step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Demidevil/DD Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [21, 22, 23, 24, 25, 26]
+}
+
+[sub_resource type="Animation" id="Animation_kces7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Demidevil/DD Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [21]
+}
+
+[sub_resource type="Animation" id="Animation_3x413"]
+resource_name = "start jump"
+length = 0.25
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Demidevil/DD Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [18]
+}
+
+[sub_resource type="Animation" id="Animation_3fqd1"]
+resource_name = "end jump"
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Demidevil/DD Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [17, 18, 19, 20]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_38rej"]
 _data = {
+&"RESET": SubResource("Animation_kces7"),
+&"end jump": SubResource("Animation_3fqd1"),
 &"fall": SubResource("Animation_23lac"),
 &"idle": SubResource("Animation_6cd4h"),
 &"jump": SubResource("Animation_t1xgp"),
-&"move": SubResource("Animation_38rej")
+&"move": SubResource("Animation_38rej"),
+&"start jump": SubResource("Animation_3x413")
 }
 
 [sub_resource type="Animation" id="Animation_eprmk"]
@@ -210,8 +310,7 @@ func handle_input(event: InputEvent):
 "
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7dd06"]
-radius = 8.0
-height = 24.0
+radius = 6.0
 
 [node name="DreamPlayer" type="CharacterBody2D"]
 script = ExtResource("1_38rej")
@@ -246,7 +345,7 @@ speed_scale = 2.0
 script = ExtResource("4_w3t24")
 controller = NodePath("..")
 sprite = NodePath("DD Sprite2D")
-animation_player = NodePath("DD AnimationPlayer")
+animation_player = NodePath("DDAnimationPlayer")
 state_machine = NodePath("../StateMachine")
 max_speed_raw = null
 acceleration_raw = null
@@ -257,13 +356,18 @@ jump_buffer_time = null
 jump_count = null
 
 [node name="DD Sprite2D" type="Sprite2D" parent="Demidevil"]
-position = Vector2(-4, -32.5)
-scale = Vector2(1, 1.015625)
-texture = ExtResource("4_t1xgp")
-hframes = 16
-vframes = 81
-frame = 896
-region_rect = Rect2(0, 5120, 64, 64)
+texture = ExtResource("4_kces7")
+hframes = 6
+vframes = 5
+frame = 21
+
+[node name="DDAnimationPlayer" type="AnimationPlayer" parent="Demidevil"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_38rej")
+}
+autoplay = "idle"
+speed_scale = 2.0
 
 [node name="DD AnimationPlayer" type="AnimationPlayer" parent="Demidevil"]
 libraries = {
@@ -345,12 +449,12 @@ is_active = null
 visible = false
 
 [node name="HaloBuff" type="Node" parent="BuffManager"]
-script = ExtResource("23_ho7au")
 
 [node name="AnimationManager" type="Node" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -12)
+visible = false
+position = Vector2(0, 9)
 shape = SubResource("CapsuleShape2D_7dd06")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -361,19 +465,19 @@ position_smoothing_speed = 3.0
 drag_vertical_offset = -1.0
 
 [node name="GroundRay" type="RayCast2D" parent="."]
-position = Vector2(0, -5)
+position = Vector2(0, 18)
 target_position = Vector2(0, 6)
 
 [node name="halobar" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(-2, -32)
+position = Vector2(0, -10)
 texture = ExtResource("24_wv7ja")
 region_enabled = true
 region_rect = Rect2(162, 36, 18, 18)
 
 [node name="shield" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(1, -15)
+position = Vector2(0, 8)
 texture = ExtResource("24_wv7ja")
 region_enabled = true
 region_rect = Rect2(18, 54, 36, 36)
