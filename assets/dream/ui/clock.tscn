@@ -1,7 +1,15 @@
-[gd_scene format=3 uid="uid://b2kfrpfaecbew"]
+[gd_scene load_steps=2 format=3 uid="uid://b2kfrpfaecbew"]
 
-[node name="Clock" type="Control"]
+[ext_resource type="Script" uid="uid://dgj7vdarjept3" path="res://assets/dream/ui/clockUI.gd" id="1_rkg6r"]
+
+[node name="ClockUI" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("1_rkg6r")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0

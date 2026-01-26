@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://ogf28r131ede"]
+[gd_scene load_steps=3 format=3 uid="uid://ogf28r131ede"]
 
 [ext_resource type="PackedScene" uid="uid://b2kfrpfaecbew" path="res://assets/dream/ui/clock.tscn" id="1_fy63i"]
+[ext_resource type="Script" uid="uid://dv2567a2h8fcc" path="res://assets/reality/scenes/ui/reality_hud.gd" id="1_wnpt6"]
 
 [node name="reality_hud" type="CanvasLayer"]
+script = ExtResource("1_wnpt6")
 
 [node name="Clock" parent="." instance=ExtResource("1_fy63i")]
 

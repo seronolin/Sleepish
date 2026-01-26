@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://cesosdqkj8fje"]
 
-[ext_resource type="PackedScene" uid="uid://1j8npl34lysi" path="res://assets/dream/scenes/reality/rooms/reality_room_base.tscn" id="1_848v0"]
-[ext_resource type="Texture2D" uid="uid://d88bh4wr54hn" path="res://assets/dream/sprites/tileset.png" id="2_d0hx6"]
+[ext_resource type="PackedScene" uid="uid://1j8npl34lysi" path="res://assets/reality/scenes/rooms/reality_room_base.tscn" id="1_848v0"]
+[ext_resource type="Script" uid="uid://dnxuiom33ig12" path="res://assets/reality/scenes/rooms/demis_house/demis_bedroom.gd" id="2_3kamg"]
 
 [node name="DemisBedroom" instance=ExtResource("1_848v0")]
+script = ExtResource("2_3kamg")
 
 [node name="Tileset" type="Sprite2D" parent="." index="2"]
 position = Vector2(13, 18)
-texture = ExtResource("2_d0hx6")

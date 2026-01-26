@@ -23,6 +23,7 @@ SceneManager="*res://assets/core/scripts/scene_manager.gd"
 BiteBlightManager="*res://assets/dream/systems/bites_blights/bite_blight_manager.gd"
 GlossaryManager="*res://assets/dream/systems/glossaries/glossary_manager.gd"
 Global="*res://assets/core/scripts/global.gd"
+Flags="*res://assets/core/scripts/flags.gd"
 
 [display]
 
