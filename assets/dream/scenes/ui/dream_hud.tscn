@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://j2rywcov3o6c"]
+[gd_scene load_steps=3 format=3 uid="uid://j2rywcov3o6c"]
 
 [ext_resource type="PackedScene" uid="uid://2uq5l0s0tmo8" path="res://assets/dream/ui/health_display.tscn" id="1_h5ey0"]
 [ext_resource type="PackedScene" uid="uid://cjhyujw3ax0m6" path="res://assets/dream/scenes/ui/energy_bar.tscn" id="2_05p3m"]
-[ext_resource type="Script" uid="uid://c25iu2m1lkycc" path="res://assets/dream/scripts/button.gd" id="3_05p3m"]
 
 [node name="HUD" type="CanvasLayer"]
 
@@ -27,11 +26,3 @@ offset_top = 18.0
 offset_right = 162.0
 offset_bottom = 54.0
 scale = Vector2(2, 2)
-
-[node name="Button" type="Button" parent="."]
-offset_left = 865.0
-offset_top = 483.0
-offset_right = 941.0
-offset_bottom = 514.0
-text = "Wake up"
-script = ExtResource("3_05p3m")

@@ -6,10 +6,9 @@ extends Control
 func _ready():
 	start_button.text = "Start Game"
 	start_button.pressed.connect(_on_start_pressed)
+	SceneManager.current_gui_node = self
 
 func _on_start_pressed():
 	print("[MainMenu] Starting game...")
-	# Boot directly into dream
-	GameManager.call_deferred("load_dream_region", "castle_in_the_sky", Vector2(100, 100))
-	# Remove main menu from scene tree after starting game
-	queue_free()
+	SceneManager.change_live_scene(SceneManager.World.REALITY,"demis_bedroom", SceneManager.ChangeOptions.DELETE)
+	SceneManager.change_gui_scene( "res://assets/reality/scenes/ui/reality_hud.tscn", SceneManager.ChangeOptions.DELETE)

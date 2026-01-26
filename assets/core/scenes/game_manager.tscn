@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxjwjw1h2mkck"]
+
+[ext_resource type="Script" uid="uid://cn1b8olqtqofw" path="res://assets/core/scripts/scene_manager.gd" id="1_whsus"]
+[ext_resource type="PackedScene" uid="uid://ci3cwl23r23fm" path="res://assets/core/scenes/main_menu.tscn" id="2_10xao"]
+
+[node name="SceneManager" type="Node" node_paths=PackedStringArray("gui")]
+script = ExtResource("1_whsus")
+gui = NodePath("UI")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MainMenu" parent="UI" instance=ExtResource("2_10xao")]
+layout_mode = 1

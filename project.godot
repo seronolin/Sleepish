@@ -19,7 +19,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameClock="*res://assets/core/scripts/game_clock.gd"
-GameManager="*res://assets/core/scripts/game_manager.gd"
 SceneManager="*res://assets/core/scripts/scene_manager.gd"
 BiteBlightManager="*res://assets/dream/systems/bites_blights/bite_blight_manager.gd"
 GlossaryManager="*res://assets/dream/systems/glossaries/glossary_manager.gd"
@@ -31,7 +30,7 @@ window/size/viewport_width=960
 window/size/viewport_height=540
 window/size/always_on_top=true
 window/stretch/mode="viewport"
-window/stretch/aspect="expand"
+window/stretch/scale_mode="integer"
 
 [file_customization]
 

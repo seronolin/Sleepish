@@ -91,5 +91,5 @@ func change_energy(amount:float):
 		pass_out()
 
 func pass_out():
-	print("[Player] Passed out from exhaustion!")
-	GameManager.initiate_sleep(false)
+	pass
+	#TODO: add passout logic?
