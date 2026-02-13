@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=48 format=3 uid="uid://dil5ccfcqs208"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://dil5ccfcqs208"]
 
 [ext_resource type="Texture2D" uid="uid://b1adndjs2p0ip" path="res://assets/dream/sprites/ui/heart sprite sheet.png" id="1_joyud"]
 

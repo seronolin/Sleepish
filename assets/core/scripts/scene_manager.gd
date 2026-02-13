@@ -96,25 +96,25 @@ func change_gui_scene(new_scene_path: String, option: ChangeOptions) -> void:
 		print("[DEBUG] New scene instantiated: ", current_gui_node)
 		get_tree().root.add_child(current_gui_node)
 	else:
-		push_error("[GameManager] Failed to load GUI scene: " + new_scene_path)
+		push_error("[SceneManager] Failed to load GUI scene: " + new_scene_path)
 
 func change_live_scene(world: World, scene_name: String, option: ChangeOptions) -> void:
 	var scene_path = ""
 	# Get the scene path based on world type
 	if world == World.REALITY:
 		if not reality_rooms.has(scene_name):
-			push_error("[GameManager] Reality room not found: " + scene_name)
+			push_error("[SceneManager] Reality room not found: " + scene_name)
 			return
 		scene_path = reality_rooms[scene_name]
 	else: # World.DREAM
 		if not dream_regions.has(scene_name):
-			push_error("[GameManager] Dream region not found: " + scene_name)
+			push_error("[SceneManager] Dream region not found: " + scene_name)
 			return
 		scene_path = dream_regions[scene_name]
 	
 	# Check if the scene we want is already loaded and hidden
 	if hidden_live_scenes.has(scene_path):
-		print("[GameManager] Restoring hidden scene: ", scene_name)
+		print("[SceneManager] Restoring hidden scene: ", scene_name)
 		
 		# Handle current live scene first
 		if live_scene != null:
@@ -188,7 +188,7 @@ func switch_player(world: World) -> void:
 
 ## ROOM AND REGION LOADING FUNCS: uhnm these are weird but im thinking ill have separate funcs for changing scenes and those or that function will be responsible for what happens to the scene that it was on previously yk?
 func load_reality_room(room_name: String) -> void: # might need to add something for the spawn position here but otherwise this works great yay
-	print("[GameManager] Loading Reality room: ", room_name)
+	print("[SceneManager] Loading Reality room: ", room_name)
 	
 	var room_scene = load(reality_rooms[room_name])
 	current_reality_scene = room_scene.instantiate()
@@ -196,7 +196,7 @@ func load_reality_room(room_name: String) -> void: # might need to add something
 	live_scene = current_reality_scene
 
 func load_dream_region(region_name: String) -> void:
-	print("[GameManager] Loading Dream region: ", region_name)
+	print("[SceneManager] Loading Dream region: ", region_name)
 	
 	var region_scene = load(dream_regions[region_name])
 	current_dream_scene = region_scene.instantiate()
@@ -207,16 +207,16 @@ func load_dream_region(region_name: String) -> void:
 
 func _scan_reality_rooms() -> void:
 	_scan_folder_recursive(REALITY_ROOMS_PATH, reality_rooms)
-	print("[GameManager] Found Reality rooms: ", reality_rooms.keys())
+	print("[SceneManager] Found Reality rooms: ", reality_rooms.keys())
 
 func _scan_dream_regions() -> void:
 	_scan_folder_recursive(DREAM_REGIONS_PATH, dream_regions)
-	print("[GameManager] Found Dream regions: ", dream_regions.keys())
+	print("[SceneManager] Found Dream regions: ", dream_regions.keys())
 
 func _scan_folder_recursive(path: String, dict: Dictionary) -> void:
 	var dir = DirAccess.open(path)
 	if not dir:
-		push_warning("[GameManager] Could not open directory: " + path)
+		push_warning("[SceneManager] Could not open directory: " + path)
 		return
 	
 	dir.list_dir_begin()
