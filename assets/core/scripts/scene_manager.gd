@@ -6,15 +6,13 @@ extends Node #too mnay fuckin variables Jesus...
 enum  World {REALITY, DREAM}
 enum ChangeOptions {DELETE, HIDE, PAUSE}
 
-var current_world: World = World.REALITY
-var current_reality_scene
-var current_dream_scene
+var current_world: World = World.DREAM
 var current_gui_node: Node = null  # Store the actual node instance, not a file path
 var current_player: Node = null
 var reality_player_scene: Node = null  # Cache the reality player
 var dream_player_scene: Node = null    # Cache the dream player
 
-var live_scene # should store the name of the currently active scene, which is basically the most recently loaded scene
+var live_scene # should store the currently active scene node
 
 const DREAM_UI_SCENE := "res://assets/dream/scenes/ui/dream_hud.tscn"
 const REALITY_UI_SCENE := "res://assets/reality/scenes/ui/reality_hud.tscn"
@@ -31,9 +29,9 @@ var dream_regions := {}
 
 
 # Reality tracking
-var current_reality_room: String = "demis_bedroom"  # Which reality room the player is 
+var current_reality_room: String = "demis_bedroom"  # Which reality room the player is in
 # Dream tracking
-var current_dream_region: String = "castle_in_the_sky"  # Which region
+var current_dream_region: String = "castle_in_the_sky"  # Which dream region the player is in
 
 var scene_cache: Dictionary = {} # Store loaded scenes by path?
 var hidden_gui_nodes: Dictionary = {}  # Track hidden scenes by their file path
@@ -106,11 +104,13 @@ func change_live_scene(world: World, scene_name: String, option: ChangeOptions) 
 			push_error("[SceneManager] Reality room not found: " + scene_name)
 			return
 		scene_path = reality_rooms[scene_name]
+		current_reality_room = scene_name  # Update tracking
 	else: # World.DREAM
 		if not dream_regions.has(scene_name):
 			push_error("[SceneManager] Dream region not found: " + scene_name)
 			return
 		scene_path = dream_regions[scene_name]
+		current_dream_region = scene_name  # Update tracking
 	
 	# Check if the scene we want is already loaded and hidden
 	if hidden_live_scenes.has(scene_path):
@@ -191,20 +191,37 @@ func load_reality_room(room_name: String) -> void: # might need to add something
 	print("[SceneManager] Loading Reality room: ", room_name)
 	
 	var room_scene = load(reality_rooms[room_name])
-	current_reality_scene = room_scene.instantiate()
-	get_tree().root.add_child(current_reality_scene)
-	live_scene = current_reality_scene
+	var room_instance = room_scene.instantiate()
+	get_tree().root.add_child(room_instance)
+	live_scene = room_instance
 
 func load_dream_region(region_name: String) -> void:
 	print("[SceneManager] Loading Dream region: ", region_name)
 	
 	var region_scene = load(dream_regions[region_name])
-	current_dream_scene = region_scene.instantiate()
-	get_tree().root.add_child(current_dream_scene)
-	live_scene = current_dream_scene
+	var region_instance = region_scene.instantiate()
+	get_tree().root.add_child(region_instance)
+	live_scene = region_instance
 
-##Idk gang but dont touch js yet
+func is_awake() -> bool:
+	return current_world == World.REALITY
 
+func switch_world(override_scene: String = "") -> void:
+	if is_awake():
+		# Currently in REALITY, switch TO DREAM
+		var target_region = override_scene if override_scene != "" else current_dream_region
+		change_gui_scene(DREAM_UI_SCENE, ChangeOptions.DELETE)
+		change_live_scene(World.DREAM, target_region, ChangeOptions.PAUSE)
+		Global.resume_game()
+	else:
+		# Currently in DREAM, switch TO REALITY
+		var target_room = override_scene if override_scene != "" else current_reality_room
+		change_gui_scene(REALITY_UI_SCENE, ChangeOptions.DELETE)
+		change_live_scene(World.REALITY, target_room, ChangeOptions.PAUSE)
+		Global.resume_game()
+
+
+#region dont touch (Scanning directories)
 func _scan_reality_rooms() -> void:
 	_scan_folder_recursive(REALITY_ROOMS_PATH, reality_rooms)
 	print("[SceneManager] Found Reality rooms: ", reality_rooms.keys())
@@ -236,6 +253,5 @@ func _scan_folder_recursive(path: String, dict: Dictionary) -> void:
 		file_name = dir.get_next()
 	
 	dir.list_dir_end()
-	
-func is_awake() -> bool:
-	return current_world == World.REALITY
+
+#endregion

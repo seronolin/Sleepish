@@ -1,16 +1,40 @@
 [gd_scene format=3 uid="uid://c6fteqeyd2o0r"]
 
-[node name="DreamPause" type="Control" unique_id=1665832979]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[ext_resource type="Script" uid="uid://d2bbaxhynu81j" path="res://assets/dream/scripts/ui/dream_pause.gd" id="1_2ho26"]
 
-[node name="Button" type="Button" parent="." unique_id=988795295]
-layout_mode = 0
-offset_left = 492.0
-offset_top = 178.0
-offset_right = 613.0
-offset_bottom = 261.0
+[node name="DreamPause" type="CanvasLayer" unique_id=1862194246]
+process_mode = 3
+script = ExtResource("1_2ho26")
+
+[node name="Resume" type="Button" parent="." unique_id=988795295]
+offset_left = 429.0
+offset_top = 141.0
+offset_right = 550.0
+offset_bottom = 224.0
+text = "Resume"
+
+[node name="WakeUp" type="Button" parent="." unique_id=1722221164]
+offset_left = 429.0
+offset_top = 234.0
+offset_right = 550.0
+offset_bottom = 317.0
+text = "Wake up
+"
+
+[node name="Options" type="Button" parent="." unique_id=1399209523]
+offset_left = 523.0
+offset_top = 397.0
+offset_right = 644.0
+offset_bottom = 480.0
+
+[node name="MainMenu" type="Button" parent="." unique_id=1465642074]
+offset_left = 357.0
+offset_top = 389.0
+offset_right = 478.0
+offset_bottom = 472.0
+text = "main Menu"
+
+[connection signal="pressed" from="Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="WakeUp" to="." method="_on_wake_up_pressed"]
+[connection signal="pressed" from="Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]

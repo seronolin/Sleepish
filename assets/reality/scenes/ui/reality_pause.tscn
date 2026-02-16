@@ -1,9 +1,45 @@
 [gd_scene format=3 uid="uid://ctx8to7xpotcp"]
 
-[node name="RealityPause" type="Control" unique_id=1068224874]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
+[ext_resource type="Script" uid="uid://bypcefupovb3" path="res://assets/reality/scenes/ui/reality_pause.gd" id="1_8lq1n"]
+
+[node name="ZonedOut" type="CanvasLayer" unique_id=730445151]
+process_mode = 3
+script = ExtResource("1_8lq1n")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=307970719]
+offset_left = 71.0
+offset_top = 180.0
+offset_right = 308.0
+offset_bottom = 403.0
+
+[node name="ZoneIn" type="Button" parent="VBoxContainer" unique_id=1483048175]
+layout_mode = 2
+
+[node name="MainMenu" type="Button" parent="VBoxContainer" unique_id=1951103713]
+layout_mode = 2
+
+[node name="Sleep_Hibernate_ShutDown" type="Button" parent="." unique_id=2004766579]
+offset_left = 291.0
+offset_top = 404.0
+offset_right = 327.0
+offset_bottom = 426.0
+text = "Sleep"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1676419498]
+anchors_preset = 2
+anchor_top = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_top = -21.0
+offset_right = 63.0
+grow_vertical = 0
+
+[node name="TaskManager" type="Button" parent="HBoxContainer" unique_id=1985251948]
+layout_mode = 2
+
+[node name="Contacts" type="Button" parent="HBoxContainer" unique_id=2054486765]
+layout_mode = 2
+
+[node name="Settings" type="Button" parent="HBoxContainer" unique_id=1667452620]
+layout_mode = 2
+
+[connection signal="pressed" from="Sleep_Hibernate_ShutDown" to="." method="_on_sleep_hibernate_shut_down_pressed"]

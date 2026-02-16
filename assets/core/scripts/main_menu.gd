@@ -12,6 +12,4 @@ func _on_start_pressed():
 	print("[MainMenu] Starting game...")
 	#SceneManager.change_live_scene(SceneManager.World.REALITY,"demis_bedroom", SceneManager.ChangeOptions.DELETE)
 	#SceneManager.change_gui_scene( "res://assets/reality/scenes/ui/reality_hud.tscn", SceneManager.ChangeOptions.DELETE)
-	
-	SceneManager.change_live_scene(SceneManager.World.DREAM,"castle_in_the_sky", SceneManager.ChangeOptions.DELETE)
-	SceneManager.change_gui_scene( "res://assets/dream/scenes/ui/dream_hud.tscn", SceneManager.ChangeOptions.DELETE)
+	SceneManager.switch_world()
