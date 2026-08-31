@@ -19,7 +19,7 @@ run/main_scene="uid://ci3cwl23r23fm"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 boot_splash/show_image=false
-boot_splash/stretch_mode=3
+boot_splash/stretch_mode=0
 
 [autoload]
 
@@ -36,7 +36,7 @@ window/size/viewport_width=960
 window/size/viewport_height=544
 window/size/always_on_top=true
 window/stretch/mode="viewport"
-window/stretch/aspect="ignore"
+window/stretch/aspect="keep_height"
 
 [file_customization]
 
