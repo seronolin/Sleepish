@@ -15,3 +15,4 @@ region_rect = Rect2(32, 32, 16, 16)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=870544653]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=567669474]
+zoom = Vector2(1.5, 1.5)
