@@ -19,6 +19,7 @@ run/main_scene="uid://ci3cwl23r23fm"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 boot_splash/show_image=false
+boot_splash/stretch_mode=3
 
 [autoload]
 
