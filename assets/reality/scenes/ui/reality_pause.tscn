@@ -19,10 +19,10 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Sleep_Hibernate_ShutDown" type="Button" parent="." unique_id=2004766579]
-offset_left = 291.0
-offset_top = 404.0
-offset_right = 327.0
-offset_bottom = 426.0
+offset_left = 412.0
+offset_top = 226.0
+offset_right = 462.0
+offset_bottom = 257.0
 text = "Sleep"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1676419498]
