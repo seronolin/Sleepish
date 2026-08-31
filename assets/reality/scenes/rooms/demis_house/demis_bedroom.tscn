@@ -6,6 +6,9 @@
 [node name="DemisBedroom" unique_id=1734173940 instance=ExtResource("1_848v0")]
 script = ExtResource("2_3kamg")
 
+[node name="PlayerSpawnPoint" parent="." index="0"]
+position = Vector2(268, 215)
+
 [node name="Tileset" type="Sprite2D" parent="." index="2" unique_id=1663451541]
 position = Vector2(13, 18)
 
