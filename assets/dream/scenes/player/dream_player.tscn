@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://c0b41va08sq6i"]
+[gd_scene format=3 uid="uid://c0b41va08sq6i"]
 
 [ext_resource type="Script" uid="uid://cp3hbqdnny5jl" path="res://assets/dream/scripts/player/player_controller.gd" id="1_38rej"]
 [ext_resource type="Script" uid="uid://boyemfeyalyey" path="res://assets/dream/scripts/player/health/hp_manager.gd" id="2_1xf5e"]
@@ -22,11 +22,9 @@
 [ext_resource type="Script" uid="uid://cl18bi5ituu07" path="res://assets/dream/scripts/player/skills/shield.gd" id="20_dabov"]
 [ext_resource type="Script" uid="uid://d3xhc1cwyom1g" path="res://assets/dream/scripts/player/buffs/buff_manager.gd" id="21_dabov"]
 [ext_resource type="Script" uid="uid://flnrrhtybm0y" path="res://assets/dream/scripts/player/buffs/shield_buff.gd" id="22_j3bop"]
-[ext_resource type="Script" path="res://assets/dream/scripts/halo_buff.gd" id="23_ho7au"]
 [ext_resource type="Texture2D" uid="uid://causey4rnints" path="res://assets/dream/sprites/bites_blights/uiii.png" id="24_wv7ja"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_38rej"]
-load_path = "res://.godot/imported/Olly Costume.png-d8c616c58805e812e9b7a03db82dc610.ctex"
 
 [sub_resource type="Animation" id="Animation_23lac"]
 resource_name = "fall"
@@ -213,10 +211,10 @@ func handle_input(event: InputEvent):
 radius = 8.0
 height = 24.0
 
-[node name="DreamPlayer" type="CharacterBody2D"]
+[node name="DreamPlayer" type="CharacterBody2D" unique_id=826449407]
 script = ExtResource("1_38rej")
 
-[node name="Demise" type="Node2D" parent="." node_paths=PackedStringArray("controller", "sprite", "animation_player", "state_machine")]
+[node name="Demise" type="Node2D" parent="." unique_id=160610555 node_paths=PackedStringArray("controller", "sprite", "animation_player", "state_machine")]
 visible = false
 script = ExtResource("2_23lac")
 controller = NodePath("..")
@@ -225,7 +223,7 @@ animation_player = NodePath("DSAnimationPlayer")
 state_machine = NodePath("../StateMachine")
 jump_force_raw = 6.0
 
-[node name="DS Sprite2D" type="Sprite2D" parent="Demise"]
+[node name="DS Sprite2D" type="Sprite2D" parent="Demise" unique_id=1056822778]
 position = Vector2(-6, -32)
 texture = SubResource("CompressedTexture2D_38rej")
 hframes = 16
@@ -234,15 +232,13 @@ frame = 385
 region_rect = Rect2(22, 3442, 20, 26)
 region_filter_clip_enabled = true
 
-[node name="DSAnimationPlayer" type="AnimationPlayer" parent="Demise"]
+[node name="DSAnimationPlayer" type="AnimationPlayer" parent="Demise" unique_id=824175624]
 root_node = NodePath("../..")
-libraries = {
-&"": SubResource("AnimationLibrary_38rej")
-}
-autoplay = "idle"
+libraries/ = SubResource("AnimationLibrary_38rej")
+autoplay = &"idle"
 speed_scale = 2.0
 
-[node name="Demidevil" type="Node2D" parent="." node_paths=PackedStringArray("controller", "sprite", "animation_player", "state_machine")]
+[node name="Demidevil" type="Node2D" parent="." unique_id=941306215 node_paths=PackedStringArray("controller", "sprite", "animation_player", "state_machine")]
 script = ExtResource("4_w3t24")
 controller = NodePath("..")
 sprite = NodePath("DD Sprite2D")
@@ -256,7 +252,7 @@ gravity_raw = 9.9
 jump_buffer_time = null
 jump_count = null
 
-[node name="DD Sprite2D" type="Sprite2D" parent="Demidevil"]
+[node name="DD Sprite2D" type="Sprite2D" parent="Demidevil" unique_id=553528958]
 position = Vector2(-4, -32.5)
 scale = Vector2(1, 1.015625)
 texture = ExtResource("4_t1xgp")
@@ -265,113 +261,109 @@ vframes = 81
 frame = 896
 region_rect = Rect2(0, 5120, 64, 64)
 
-[node name="DD AnimationPlayer" type="AnimationPlayer" parent="Demidevil"]
-libraries = {
-&"": SubResource("AnimationLibrary_ytees")
-}
-autoplay = "idle"
+[node name="DD AnimationPlayer" type="AnimationPlayer" parent="Demidevil" unique_id=428977942]
+libraries/ = SubResource("AnimationLibrary_ytees")
+autoplay = &"idle"
 speed_scale = 1.5
 
-[node name="HpManager" type="Node" parent="."]
+[node name="HpManager" type="Node" parent="." unique_id=1129236449]
 script = ExtResource("2_1xf5e")
 
-[node name="Halo" type="AnimatedSprite2D" parent="HpManager"]
+[node name="Halo" type="AnimatedSprite2D" parent="HpManager" unique_id=697308900]
 
-[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("current_state")]
+[node name="StateMachine" type="Node" parent="." unique_id=1646472015 node_paths=PackedStringArray("current_state")]
 script = ExtResource("5_23lac")
 current_state = NodePath("Idle")
 
-[node name="Locked" type="Node" parent="StateMachine"]
+[node name="Locked" type="Node" parent="StateMachine" unique_id=844398738]
 
-[node name="Idle" type="Node" parent="StateMachine"]
+[node name="Idle" type="Node" parent="StateMachine" unique_id=1132555027]
 script = ExtResource("6_w3t24")
 
-[node name="Run" type="Node" parent="StateMachine"]
+[node name="Run" type="Node" parent="StateMachine" unique_id=1619932949]
 script = SubResource("GDScript_lerqx")
 
-[node name="Jump" type="Node" parent="StateMachine"]
+[node name="Jump" type="Node" parent="StateMachine" unique_id=1953537902]
 script = ExtResource("8_jp3cw")
 
-[node name="Fall" type="Node" parent="StateMachine"]
+[node name="Fall" type="Node" parent="StateMachine" unique_id=818061493]
 script = ExtResource("8_lerqx")
 
-[node name="Dash" type="Node" parent="StateMachine"]
+[node name="Dash" type="Node" parent="StateMachine" unique_id=2009844133]
 script = ExtResource("9_dpc2m")
 
-[node name="Glide" type="Node" parent="StateMachine"]
+[node name="Glide" type="Node" parent="StateMachine" unique_id=1685289054]
 script = ExtResource("10_1swfj")
 glide_max_time = 3.0
 glide_timer = 4.0
 gravity_enabled = false
 
-[node name="Basic Attack" type="Node" parent="StateMachine"]
+[node name="Basic Attack" type="Node" parent="StateMachine" unique_id=86871013]
 
-[node name="Dead" type="Node" parent="StateMachine"]
+[node name="Dead" type="Node" parent="StateMachine" unique_id=1600433023]
 script = ExtResource("11_117r1")
 
-[node name="Reviving" type="Node" parent="StateMachine"]
+[node name="Reviving" type="Node" parent="StateMachine" unique_id=671593765]
 script = ExtResource("12_nrcx2")
 
-[node name="MoodManager" type="Node" parent="."]
+[node name="MoodManager" type="Node" parent="." unique_id=360884588]
 script = ExtResource("11_1swfj")
 
-[node name="Neutral" type="Node" parent="MoodManager"]
+[node name="Neutral" type="Node" parent="MoodManager" unique_id=1354191803]
 script = ExtResource("12_x5bw3")
 
-[node name="Joy" type="Node" parent="MoodManager"]
+[node name="Joy" type="Node" parent="MoodManager" unique_id=1645148163]
 script = ExtResource("12_vetu5")
 
-[node name="Sadness" type="Node" parent="MoodManager"]
+[node name="Sadness" type="Node" parent="MoodManager" unique_id=1782619236]
 script = ExtResource("13_x5bw3")
 
-[node name="Anger" type="Node" parent="MoodManager"]
+[node name="Anger" type="Node" parent="MoodManager" unique_id=1551005748]
 script = ExtResource("14_1xf5e")
 
-[node name="SkillManager" type="Node" parent="."]
+[node name="SkillManager" type="Node" parent="." unique_id=1748266513]
 script = ExtResource("19_w1jvo")
 
-[node name="ShieldSkill" type="Node" parent="SkillManager"]
+[node name="ShieldSkill" type="Node" parent="SkillManager" unique_id=1166674858]
 script = ExtResource("20_dabov")
 
-[node name="BuffManager" type="Node" parent="."]
+[node name="BuffManager" type="Node" parent="." unique_id=1147187525]
 script = ExtResource("21_dabov")
 
-[node name="ShieldBuff" type="Node" parent="BuffManager"]
+[node name="ShieldBuff" type="Node" parent="BuffManager" unique_id=2110860579]
 script = ExtResource("22_j3bop")
 buff_name = null
 is_active = null
 
-[node name="ShieldSprite" type="AnimatedSprite2D" parent="BuffManager/ShieldBuff"]
+[node name="ShieldSprite" type="AnimatedSprite2D" parent="BuffManager/ShieldBuff" unique_id=509451147]
 visible = false
 
-[node name="HaloBuff" type="Node" parent="BuffManager"]
-script = ExtResource("23_ho7au")
+[node name="HaloBuff" type="Node" parent="BuffManager" unique_id=66474256]
 
-[node name="AnimationManager" type="Node" parent="."]
+[node name="AnimationManager" type="Node" parent="." unique_id=1404095461]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1676185158]
 position = Vector2(0, -12)
 shape = SubResource("CapsuleShape2D_7dd06")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=852123160]
 offset = Vector2(-15, 0)
-zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 position_smoothing_speed = 3.0
 drag_vertical_offset = -1.0
 
-[node name="GroundRay" type="RayCast2D" parent="."]
+[node name="GroundRay" type="RayCast2D" parent="." unique_id=1330966283]
 position = Vector2(0, -5)
 target_position = Vector2(0, 6)
 
-[node name="halobar" type="Sprite2D" parent="."]
+[node name="halobar" type="Sprite2D" parent="." unique_id=1691361644]
 visible = false
 position = Vector2(-2, -32)
 texture = ExtResource("24_wv7ja")
 region_enabled = true
 region_rect = Rect2(162, 36, 18, 18)
 
-[node name="shield" type="Sprite2D" parent="."]
+[node name="shield" type="Sprite2D" parent="." unique_id=300955782]
 visible = false
 position = Vector2(1, -15)
 texture = ExtResource("24_wv7ja")
