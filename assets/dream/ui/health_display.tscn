@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://2uq5l0s0tmo8"]
+[gd_scene format=3 uid="uid://2uq5l0s0tmo8"]
 
 [ext_resource type="Script" uid="uid://dfafiap1ock1p" path="res://assets/dream/scripts/ui/health_display.gd" id="1_jum7t"]
 [ext_resource type="SpriteFrames" uid="uid://dil5ccfcqs208" path="res://assets/dream/ui/heart frames.tres" id="2_lpsn6"]
 
-[node name="HealthUI" type="Control"]
+[node name="HealthUI" type="Control" unique_id=820215531]
 custom_minimum_size = Vector2(116, 32)
 layout_mode = 3
 anchors_preset = 1
@@ -14,39 +14,36 @@ offset_bottom = 32.0
 grow_horizontal = 0
 size_flags_horizontal = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-layout_direction = 3
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=958294835]
 layout_mode = 0
 offset_right = 116.0
-offset_bottom = 32.0
+offset_bottom = 18.0
+layout_direction = 3
 script = ExtResource("1_jum7t")
 
-[node name="HeartWrapper1" type="Control" parent="HBoxContainer"]
-custom_minimum_size = Vector2(36, 18)
+[node name="HeartWrapper1" type="Control" parent="HBoxContainer" unique_id=1293436238]
+custom_minimum_size = Vector2(18, 18)
 layout_mode = 2
 
-[node name="Heart1" type="AnimatedSprite2D" parent="HBoxContainer/HeartWrapper1"]
-scale = Vector2(2, 2)
+[node name="Heart1" type="AnimatedSprite2D" parent="HBoxContainer/HeartWrapper1" unique_id=717428663]
 sprite_frames = ExtResource("2_lpsn6")
 animation = &"extra_full"
 centered = false
 
-[node name="HeartWrapper2" type="Control" parent="HBoxContainer"]
-custom_minimum_size = Vector2(36, 18)
+[node name="HeartWrapper2" type="Control" parent="HBoxContainer" unique_id=281992475]
+custom_minimum_size = Vector2(18, 18)
 layout_mode = 2
 
-[node name="Heart2" type="AnimatedSprite2D" parent="HBoxContainer/HeartWrapper2"]
-scale = Vector2(2, 2)
+[node name="Heart2" type="AnimatedSprite2D" parent="HBoxContainer/HeartWrapper2" unique_id=316155048]
 sprite_frames = ExtResource("2_lpsn6")
 animation = &"idle_empty"
 centered = false
 
-[node name="HeartWrapper3" type="Control" parent="HBoxContainer"]
-custom_minimum_size = Vector2(36, 18)
+[node name="HeartWrapper3" type="Control" parent="HBoxContainer" unique_id=998599638]
+custom_minimum_size = Vector2(18, 18)
 layout_mode = 2
 
-[node name="Heart3" type="AnimatedSprite2D" parent="HBoxContainer/HeartWrapper3"]
-scale = Vector2(2, 2)
+[node name="Heart3" type="AnimatedSprite2D" parent="HBoxContainer/HeartWrapper3" unique_id=1132848132]
 sprite_frames = ExtResource("2_lpsn6")
 animation = &"idle_empty"
 centered = false

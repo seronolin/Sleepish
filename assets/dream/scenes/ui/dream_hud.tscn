@@ -1,11 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://j2rywcov3o6c"]
+[gd_scene format=3 uid="uid://j2rywcov3o6c"]
 
 [ext_resource type="PackedScene" uid="uid://2uq5l0s0tmo8" path="res://assets/dream/ui/health_display.tscn" id="1_h5ey0"]
 [ext_resource type="PackedScene" uid="uid://cjhyujw3ax0m6" path="res://assets/dream/scenes/ui/energy_bar.tscn" id="2_05p3m"]
 
-[node name="HUD" type="CanvasLayer"]
+[node name="HUD" type="CanvasLayer" unique_id=977079963]
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1717224432]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -14,15 +14,14 @@ offset_right = -0.00024414063
 offset_bottom = 48.0
 grow_horizontal = 0
 
-[node name="HealthUI" parent="MarginContainer" instance=ExtResource("1_h5ey0")]
-layout_direction = 3
+[node name="HealthUI" parent="MarginContainer" unique_id=1101558447 instance=ExtResource("1_h5ey0")]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+layout_direction = 3
 
-[node name="EnergyBar" parent="." instance=ExtResource("2_05p3m")]
+[node name="EnergyBar" parent="." unique_id=1417184600 instance=ExtResource("2_05p3m")]
 offset_left = 18.0
 offset_top = 18.0
 offset_right = 162.0
 offset_bottom = 54.0
-scale = Vector2(2, 2)
